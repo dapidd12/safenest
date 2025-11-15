@@ -106,8 +106,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
       const dest = `${Date.now()}_${f.name.replace(/\s+/g,'_')}`
       log('[upload] ->', dest)
       const storage_path = await uploadFileToStorage(f, dest)
-      const username = 'piw-' + rand(6)
-      const password = 'piw-' + rand(10)
+      const username = 'sn-' + rand(6)
+      const password = 'sn-' + rand(10)
       const hash = await sha256(password)
       const rec = await insertFileRecord({ filename: f.name, storage_path, username, password_hash: hash, size: f.size })
       log('[db] inserted', rec)
